@@ -1,0 +1,114 @@
+$h3color: rgb(199, 164, 51);
+$backgroundcolor:  rgba(22, 22, 22, 0.637);
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-image: url(images/black-marble.jpg);
+    color: white;
+    text-shadow: 0px 0px 20px black;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $backgroundcolor;
+    margin-bottom: 20px;
+    color: $h3color;
+    p {
+        color: white;
+    }
+}
+
+.container {
+    margin-top: 20px;
+    background-color: $backgroundcolor;
+    .row{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        h3{
+            display: inline;
+            color: $h3color;
+
+        }
+        .char{
+            width: 250px;
+            height: 400px;
+            padding: 5px;
+            .char-head {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                img{
+                    padding-top: 5px;
+                    width: 75px;
+                    height: 75px;
+                }
+            }
+            p {
+                img{
+                    width: 12px;
+                }
+            }
+        }
+    }
+}
+
+#navbar {
+    ul {
+        font-size: 20px;
+        margin: 0; 
+        padding: 4px; 
+        list-style-type: none; 
+        text-align: left; 
+        background-color: $backgroundcolor; 
+        li {
+            display: inline;
+            a {
+                text-decoration: none; 
+                padding: .2em 1em; 
+                color: $h3color; 
+                background-color: rgba(128, 128, 128, 0); 
+            }
+            a:hover {
+                background-color: rgba(43, 43, 43, 0.637); 
+            }
+        }
+    }
+}
+
+#content {
+    margin-top: 20px;
+    padding-left: 20px;
+    background-color: $backgroundcolor;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#data{
+    margin-right: 100px;
+    width: 30%;
+    h2{
+        color: $h3color;
+    }
+}
+#inputcontent {
+    display: flex;
+    flex-direction: column;
+    input{
+        margin-bottom: 20px;
+        height: 20px;
+    }
+    input:focus{
+        outline: none;
+        height: 20px;
+    }
+    button{
+        margin-top: 30px;
+        margin-bottom: 20px;
+        width: 100px;
+        height: 30px;
+    }
+}
