@@ -1,11 +1,14 @@
 $h3color: rgb(199, 164, 51);
-$backgroundcolor:  rgba(22, 22, 22, 0.637);
+$h3coloroff: rgb(148, 121, 34);
+$backgroundcolor: rgba(22, 22, 22, 0.637);
+$otherbackground: rgb(29, 29, 29);
 
 body {
     font-family: 'Quicksand', sans-serif;
     background-image: url(images/black-marble.jpg);
     color: white;
     text-shadow: 0px 0px 20px black;
+    scrollbar-width: none;
 }
 
 .header {
@@ -28,6 +31,7 @@ body {
         flex-direction: row;
         justify-content: space-evenly;
         flex-wrap: wrap;
+        overflow-y: visible;
         h3{
             display: inline;
             color: $h3color;
@@ -35,7 +39,7 @@ body {
         }
         .char{
             width: 250px;
-            height: 400px;
+            height: 500px;
             padding: 5px;
             .char-head {
                 display: flex;
@@ -57,35 +61,35 @@ body {
 }
 
 #navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: $backgroundcolor; 
     ul {
         font-size: 20px;
         margin: 0; 
         padding: 4px; 
         list-style-type: none; 
-        text-align: left; 
-        background-color: $backgroundcolor; 
         li {
             display: inline;
-            a {
-                text-decoration: none; 
-                padding: .2em 1em; 
-                color: $h3color; 
-                background-color: rgba(128, 128, 128, 0); 
-            }
-            a:hover {
-                background-color: rgba(43, 43, 43, 0.637); 
-            }
+            text-decoration: none; 
+            padding: 4px 20px; 
+            color: $h3color; 
+            background-color: rgba(128, 128, 128, 0); 
+        }
+        li:hover {
+            background-color: rgba(43, 43, 43, 0.637); 
         }
     }
 }
 
-#content {
+.content {
     margin-top: 20px;
     padding-left: 20px;
     background-color: $backgroundcolor;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 #data{
     margin-right: 100px;
@@ -110,5 +114,172 @@ body {
         margin-bottom: 20px;
         width: 100px;
         height: 30px;
+    }
+}
+#info {
+    max-width: 55%;
+}
+.hidden {
+    display: none;
+}
+.scrollable {
+    height: 270px;
+    overflow-y: scroll;
+}
+#backtopbtn{
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: $h3color;
+    color: $otherbackground;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 10px;
+}
+#backtopbtn:hover{
+    background-color: rgb(148, 121, 34);
+}
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+    background: rgb(22, 22, 22);
+}
+::-webkit-scrollbar-thumb{
+    background: $h3color;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: rgb(148, 121, 34);
+}
+::-webkit-scrollbar-corner{
+    background: $otherbackground;
+}
+.lore{
+    padding-left: 20px;
+    margin-top: 20px;
+    background-color: $backgroundcolor;
+    #navlore{
+        padding-bottom: 10px;
+        ul{
+            font-size: 20px;
+            margin: 0; 
+            padding: 4px; 
+            padding-left: 20px;
+            list-style-type: decimal; 
+            li{
+                text-decoration: none; 
+                padding: 4px 20px; 
+                a{
+                    color: white;
+                }
+            }
+        }
+    }
+    h2{
+        color: $h3color;
+        padding-top: 20px;
+    }
+    h3{
+        color: $h3coloroff;
+        padding-top: 20px;
+    }
+    h4{
+        padding-top: 20px;
+    }
+    h5{
+        padding-top: 20px;
+    }
+    hr{
+        color: $otherbackground;
+    }
+}
+#map{
+    img{
+        max-width: 80%;
+    }
+}
+#playbles{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+
+    div{
+        width: 400px;
+        height: 700px;
+        padding-left: 20px;
+        padding-right: 20px;
+        overflow-y: scroll;
+        margin: 10px;
+    }
+}
+#nonplayables{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    div{
+        width: 400px;
+        height: 400px;
+        padding-left: 20px;
+        padding-right: 20px;
+        overflow-y: scroll;
+        margin: 10px;
+    }
+}
+#infoclasses{
+    display: flex;
+    flex-direction: column;
+    #pickclass{
+        ul{
+            list-style: circle;
+        }
+    }
+    #classroles{
+        table{
+            margin-top: 20px;
+            border: solid $otherbackground;
+            tr{
+                th{
+                    color: $h3coloroff;
+                    padding: 5px;
+                    border: solid $otherbackground;
+                    text-align: center;
+                }
+                td{
+                    padding: 5px;
+                    border: solid $otherbackground;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    #classcards{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        div{
+            display: flex;
+            flex-direction: column;
+            width: 250px;
+            height: 600px;
+            padding-left: 20px;
+            padding-right: 20px;
+            margin: 10px;
+            div{
+                img{
+                    padding: 5px;
+                }
+            }
+            p{
+                text-align: center;
+            }
+            img{
+                align-self: center;
+            }
+        }
     }
 }
