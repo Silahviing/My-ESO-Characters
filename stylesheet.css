@@ -6,6 +6,12 @@ body {
   scrollbar-width: none;
 }
 
+body a {
+  color: #c8b986;
+  -webkit-text-decoration: solid;
+          text-decoration: solid;
+}
+
 .header {
   display: -webkit-box;
   display: -ms-flexbox;
