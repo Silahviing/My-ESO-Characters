@@ -145,3 +145,22 @@ function backtotop(){
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 }
+const forblood = "audio/ForBloodForGloryForHonor.mp3";
+const omens = "audio/OmensInTheClouds.mp3";
+const moons = "audio/MoonsOfEveningStar.mp3";
+const beauty = "audio/BeautyOfDawn.mp3";
+
+let audio = document.getElementById("myaudio");
+audio.volume = 0.3;
+
+audio.onended = function (){
+    if (audio.currentSrc.includes(forblood)){
+        audio.src = omens;
+    } else if (audio.currentSrc.includes(omens)){
+        audio.src = moons;
+    } else if(audio.currentSrc.includes(moons)){
+        audio.src = beauty;
+    } else {
+        audio.src = forblood;
+    }
+}

@@ -134,8 +134,8 @@ body {
 }
 #backtopbtn{
     position: fixed;
-    bottom: 20px;
-    right: 30px;
+    bottom: 40px;
+    right: 20px;
     z-index: 99;
     border: none;
     outline: none;
@@ -288,4 +288,11 @@ body {
             }
         }
     }
+}
+audio{
+    width: 100%;
+    height: 20px;
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
 }
