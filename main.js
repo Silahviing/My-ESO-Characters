@@ -91,7 +91,7 @@ function createNewCharacter(ev) {
         charalliance.value + "<br> Race: " + charrace.value + "<br> Class: " + charclass.value;
 
     let storypara = document.createElement("p");
-    storypara.innerText = "Story: " +charstory.value;
+    storypara.innerHTML = "<span style='color: rgb(199, 164, 51);'>Story:</span> " +charstory.value;
     storypara.classList.add("scrollable");
 
 
