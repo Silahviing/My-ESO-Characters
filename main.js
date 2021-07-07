@@ -11,6 +11,8 @@ const lore = document.getElementById("lore");
 const about = document.getElementById("about");
 
 
+// Naviagtion
+
 home.addEventListener("click", backhome);
 
 createnew.addEventListener("click", ev => {
@@ -46,6 +48,8 @@ about.addEventListener("click", ev => {
     aboutdiv.classList.remove("hidden");
 })
 
+//New Character Creation
+
 addButton.addEventListener("click", createNewCharacter);
 
 function backhome(ev) {
@@ -73,16 +77,6 @@ function createNewCharacter(ev) {
 
     let allianceImg = document.createElement("img");
     allianceImg.src = createAllianceImg(charalliance);
-/*
-    let imgGen = document.createElement("img");
-
-    if (chargender == "Female") {
-        imgGen.src = "images/female.png";
-    }
-    else {
-        imgGen.src = "images/male.png";
-    }
-*/
 
     let line = document.createElement("hr");
 
@@ -113,6 +107,8 @@ function createNewCharacter(ev) {
     backhome();
 }
 
+//get the rigth gender symbol
+
 function createGenderImg(genderInputHTML) {
     let resultStr = "";
     if (genderInputHTML != null) {
@@ -125,6 +121,8 @@ function createGenderImg(genderInputHTML) {
     }
     return resultStr;
 }
+
+//get the right alliance symbol
 
 function createAllianceImg(allianceInputHTML){
     let resultStr = "";
@@ -141,10 +139,15 @@ function createAllianceImg(allianceInputHTML){
     return resultStr;
 }
 
+//back to top button
+
 function backtotop(){
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 }
+
+//audio player for practice (I hate websites that have those automatic audio players and can't find them to turn them off...)
+
 const forblood = "audio/ForBloodForGloryForHonor.mp3";
 const omens = "audio/OmensInTheClouds.mp3";
 const moons = "audio/MoonsOfEveningStar.mp3";
